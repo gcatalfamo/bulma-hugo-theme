@@ -1,0 +1,32 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    
+    {{ "<!-- Mobile Specific Meta -->" | safeHTML }}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{/* .Hugo.Generator */}}
+    
+    <title> {{ .Title }} </title>
+    
+    {{/*"<!-- Favicon -->" |safeHTML */}}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "images/favicon.ico" | absURL }}"/>
+    
+    {{/*"<!-- BULMA CSS -->"|safeHTML */}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    
+    {{/*"<!-- THEME CSS (*generated* assets) -->"| safeHTML*/}}
+    {{ $styles := resources.Get "css/style.css" | minify }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+    
+    {{/*"<!-- CUSTOM CSS (*static*) -->"| safeHTML */}}
+    {{ range .Site.Params.custom_css }}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+    {{ end }}
+    {{/*"<!-- Fontawesome Icon font -->"|safeHTML */}}
+    {{/*<link rel="stylesheet" href="{{"plugins/themefisher-font/style.css" | absURL}}">*/}}
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+</head>
+{{"<!-- body start -->" | safeHTML}}
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="50">

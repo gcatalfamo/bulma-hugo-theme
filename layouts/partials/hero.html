@@ -1,0 +1,16 @@
+{{if .data.bgImage}}
+<section class="" style='background-image: url("{{ .data.bgImage | absURL }}")'>
+{{else}}
+<section class="hero {{.data.bgStyle}}">
+{{end}}
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <p class="title {{.data.txtColor}}">{{.data.heading}}</p>
+            <p class="subtitle {{.data.txtColor}}">{{.data.content}}</p>
+            {{ range .data.button }}
+            <a href="{{.btnURL}}" class="button {{.btnStyle}}">{{.btnText}}</a>
+            {{ end }}
+        </div>
+    </div>
+    
+</section>

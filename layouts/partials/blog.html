@@ -1,0 +1,126 @@
+{{ if .data.enable}}
+<section class="container">
+    <div class="hero-body">
+        <div class="columns">
+            <div class="column is-one-third">
+
+                <div class="box content">
+                    <h4 class="has-text-primary">{{ with .data.heading }} {{ . }} {{ end }} <span class="has-text-info"> Sections</span></h4>      
+                    {{$section := "news"}}
+                    {{/* range where .context.Data.Pages.ByPublishDate.Reverse "Section" $section */}}
+                    {{ range .context.Data.Pages.ByPublishDate.Reverse }}
+                    <article class="post">
+                        <div class="media">
+                            <div class="media-left">
+                                <span class="tag">{{ .Section }}</span>
+                                {{/* range $name, $taxonomy := .Site.Taxonomies.tags */}}
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+                                </div>
+                            </div>
+                            <div class="media-right">
+                                <span class="has-text-danger"><i class="fa fa-comments"></i> 1</span>
+                            </div>
+                        </div>
+                    </article>
+                    {{ end }}
+                    <article class="post">
+                        <div class="media">
+                            <div class="media-left"></div>
+                            <div class="media-content">
+                                <div class="content">
+                                </div>
+                            </div>
+                            <div class="media-right">
+                                <a href="{{ .Permalink }}">Read all news</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="column is-one-third">
+                <div class="box content">
+                    <h4 class="has-text-primary">{{ with .data.heading }} {{ . }} {{ end }}<span class="has-text-info"> TAGS</span></h4>
+                    {{$section := "news"}}
+                    {{/* range where .context.Data.Pages.ByPublishDate.Reverse "Section" $section */}}
+                    {{ range .context.Data.Pages.ByPublishDate.Reverse }}
+                    <article class="post">
+                        <div class="media">
+                            <div class="media-left">
+                                {{ range $taxonomy := .Params.tags }}
+                                <a href="/tags/{{ $taxonomy | urlize }}"><span class="tag is-warning">{{ $taxonomy }}</span></a>
+                                {{ end }}
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+                                </div>
+                            </div>
+                            <div class="media-right">
+                                <span class="has-text-danger"><i class="fa fa-comments"></i> 1</span>
+                            </div>
+                        </div>
+                    </article>
+                    {{ end }}
+                    <article class="post">
+                        <div class="media">
+                            <div class="media-left"></div>
+                            <div class="media-content">
+                                <div class="content">
+                                </div>
+                            </div>
+                            <div class="media-right">
+                                <a href="{{ .Permalink }}">Read all news</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="column is-one-third">
+                <div class="box content">
+                    <h4 class="has-text-primary">{{ with .data.heading }} {{ . }} {{ end }} {{ with .data.headingSpan }} <span
+                            class="has-text-info">{{ . }}</span>
+                        {{ end }} </span></h4>
+                    {{$section := "news"}}
+                    {{ range where .context.Data.Pages.ByPublishDate.Reverse "Section" $section }}
+                    <article class="post">
+                        <div class="media">
+                            <div class="media-left">
+                            {{ range $taxonomy := .Params.categories }}
+                            <a href="/tags/{{ $taxonomy | urlize }}"><span class="tag is-primary">{{ $taxonomy }}</span></a>
+                            {{ end }}
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+                                </div>
+                            </div>
+                            <div class="media-right">
+                                <span class="has-text-danger"><i class="fa fa-comments"></i> 1</span>
+                            </div>
+                        </div>
+                    </article>
+                    {{ end }}
+                    <article class="post">
+                        <div class="media">
+                            <div class="media-left"></div>
+                            <div class="media-content">
+                                <div class="content">
+                                </div>
+                            </div>
+                            <div class="media-right">
+                                <a href="{{ .Permalink }}">Read all news</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{{ end }}

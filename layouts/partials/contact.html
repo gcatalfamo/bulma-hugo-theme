@@ -1,0 +1,59 @@
+{{ if .data.enable }}
+{{if .data.bgImage}}
+<section class="" style='background-image: url("{{ .data.bgImage | absURL }}")'>
+{{else}}
+<section class="hero {{.data.bgStyle}}">
+{{end}}
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <p class="title {{.data.txtColor}}">{{.data.heading}}</p>
+            <p class="subtitle {{.data.txtColor}}">{{.data.content}}</p>
+            <form>
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input class="input" type="text" placeholder="Name">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input class="input" type="email" placeholder="Email">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <textarea class="textarea" placeholder="Message us"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="field is-horizontal">
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-warning">
+                                    Send message
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>
+{{ end }}

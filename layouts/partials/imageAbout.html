@@ -1,0 +1,33 @@
+<section class="hero {{.data.sectionStyle}}">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="columns is-vcentered">
+
+                    <div class="column is-5">
+                        <figure class="image is-5by3">
+                            <img src="{{ .data.image | absURL}}" alt="Description">
+                        </figure>
+                    </div>
+
+                    <div class="column is-6 is-offset-1">
+                        {{with .data.supertitle}} <h3>{{ . }}</h3> {{ end }}
+                        {{with .data.title}} <h1 class="title is-2">{{ . }}</h1> {{ end }}
+                        {{with .data.subtitle}} <h2 class="subtitle is-4">{{ . }}</h2> {{ end }}
+                        <br>
+                        <p class="has-text-centered">
+                            <a class="button {{.data.buttonStyle}}">
+                                {{if .data.isButtonIcon}}
+                                <span class="icon">
+                                    {{with .data.buttonIcon}} <i class="{{ . }}"></i> {{ end }}
+                                </span>
+                                {{end}}
+                                {{with .data.button}} <span>{{ . }}</span> {{ end }}
+                            </a>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</section>

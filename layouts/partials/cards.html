@@ -1,0 +1,47 @@
+<section class="">
+    <div class="hero-body">
+        <div class="container">
+            <div class="row columns">
+                {{ range .data.item }}          
+                <div class="column">
+                    <div class="card large round">
+                        <div class="card-image">
+                            <figure  class="image is-2by1">
+                                <img src="{{ .image | absURL}}" alt="Image">
+                            </figure>
+                            {{if .stripe}}
+                            <span class="tag {{.stripeColor}} is-overlay is-radiusless">{{.stripe}}</span>
+                            {{ end }}
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                {{ with .title }}<h3>{{ . }}</h3>{{ end }}
+                                {{if .tags}}
+                                <div class="field is-grouped is-grouped-multiline">
+                                    {{ range .tags}}
+                                    <div class="control">
+                                        <div class="tags has-addons">
+                                            <a class="tag {{.tagColor}}">{{.tagText}}</a>
+                                        </div>
+                                    </div>
+                                    {{ end }}
+                                </div>
+                                {{ end }}
+                                {{.content}}
+                            </div>
+
+                        </div>
+                        {{if .footer}}
+                        <footer class="card-footer {{.footerColor}}">
+                            {{ range .footer}}
+                            <a href="{{.link}}" class="card-footer-item {{.textColor}}">{{.text}}</a>
+                            {{ end }}
+                        </footer>
+                        {{end}}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
