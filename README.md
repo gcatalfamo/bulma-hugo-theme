@@ -1,4 +1,4 @@
-#TODO
-Theme readme
+### TODO
+- Theme readme
 
-## => [**Live demo**](https://gcatalfamo.github.io/bulma-hugo-example/public/index.html)
+* [**Live demo**](https://gcatalfamo.github.io/bulma-hugo-example/public/index.html)

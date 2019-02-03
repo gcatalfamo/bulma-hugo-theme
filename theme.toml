@@ -1,7 +1,7 @@
-name = "bulma-hugo"
+name = "bulma-hugo-theme"
 version = "20190203"
-description = "Hugo template made with Bulma"
-homepage = "https://github.com/gcatalfamo/bulma-hugo"
+description = "Hugo template made with the Bulma CSS framework"
+homepage = "https://github.com/gcatalfamo/bulma-hugo-theme"
 tags = ['landing-page', 'google-analytics', 'fast', 'modern', 'minimal', 'minimalistic', 'business', 'agency-template', 'themefisher', 'hugo-theme', 'hugo-templates', 'bootstrap', 'blog', 'responsive', 'portfolio', 'single-page', 'dark', 'clean', 'simple', 'company', 'creative', 'contact-form', 'custom-themes', 'mobile']
 features = ['bootstrap','responsive']
 min_version = "0.52"
