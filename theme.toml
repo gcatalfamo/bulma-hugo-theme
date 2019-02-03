@@ -1,8 +1,6 @@
 name = "bulma-hugo"
-version = "20190129"
-license = "CC BY 3.0"
-licenselink = "https://creativecommons.org/licenses/by/3.0/"
-description = "Hugo port of the Themefisher’s Meghna Template"
+version = "20190203"
+description = "Hugo template made with Bulma"
 homepage = "https://github.com/gcatalfamo/bulma-hugo"
 tags = ['landing-page', 'google-analytics', 'fast', 'modern', 'minimal', 'minimalistic', 'business', 'agency-template', 'themefisher', 'hugo-theme', 'hugo-templates', 'bootstrap', 'blog', 'responsive', 'portfolio', 'single-page', 'dark', 'clean', 'simple', 'company', 'creative', 'contact-form', 'custom-themes', 'mobile']
 features = ['bootstrap','responsive']
