@@ -31,7 +31,12 @@
                         {{ else }}
                             {{ $currentPage := $.Permalink }}
                             {{ $lastUrlElement := index (last 1 (split (delimit (split $currentPage "/") "," "") ",")) 0 }}
-                            <a class='navbar-item{{if eq $lastUrlElement .URL }} {{ $.Site.Params.menu.activeStyle}}{{end}}' href="{{ .URL }}">{{ .Name }}</a>
+                            {{if eq $lastUrlElement .URL }}
+                            <a class='navbar-item {{ $.Site.Params.menu.activeStyle}}' href="#">
+                                {{else}}
+                                <a class='navbar-item' href="{{ $.Site.BaseURL }}{{ .URL }}">
+                                    {{end}}
+                                    {{ .Name }}</a>
                         {{ end }}
                         {{ end }}
                     </div>
